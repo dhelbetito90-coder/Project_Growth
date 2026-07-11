@@ -1,0 +1,66 @@
+
+<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Growth</title><style>
+:root{--g:#1e5631;--b:#e0dcd3;--t:#2c2c2c;--bg:#f4f1ea;--a:#d4af37}
+*{box-sizing:border-box;margin:0;padding:0;font-family:sans-serif}
+body{background:var(--bg);display:flex;justify-content:center;align-items:center;min-height:100vh;color:var(--t)}
+#gt{background:#fff;padding:20px;border-radius:8px;text-align:center;width:280px;box-shadow:0 4px 10px rgba(0,0,0,.05);border:1px solid var(--b)}
+#gt input{width:100%;padding:10px;margin:10px 0;border-radius:4px;border:1px solid var(--b);outline:0}
+#ap{display:none;width:100vw;height:100vh;background:#fdfbf7}
+.lay{display:flex;height:100vh}
+nav{width:180px;background:var(--g);color:#fff;padding:15px 10px;flex-shrink:0}
+nav h3{margin-bottom:15px;font-size:18px}
+nav a{display:block;color:rgba(255,255,255,.7);text-decoration:none;padding:10px;border-radius:4px;cursor:pointer;margin-top:2px}
+nav a:hover,nav a.at{color:#fff;background:rgba(255,255,255,.15)}
+nav a.at{background:rgba(255,255,255,.2);border-left:4px solid var(--a)}
+main{flex:1;padding:20px;overflow-y:auto}
+.pnl{display:none}.pnl.at{display:block}
+.hdr{font-size:20px;color:var(--g);margin-bottom:15px;border-bottom:2px solid var(--b);padding-bottom:5px}
+.grd{display:grid;grid-template-columns:1.2fr 1fr;gap:15px;max-width:850px}
+.crd{background:#fff;border:1px solid var(--b);border-radius:6px;padding:15px;margin-bottom:10px}
+.sb-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;max-width:800px}
+.row{display:flex;align-items:center;padding:12px;border:1px solid var(--b);border-radius:6px;cursor:pointer;background:#fff;font-weight:bold}
+.row:hover{border-color:var(--g);background:#e8f5e9;color:var(--g)}
+.ls-bx{display:none;border-top:4px solid var(--g)}
+.bk-bt{background:var(--g);color:#fff;border:none;padding:6px 12px;border-radius:4px;cursor:pointer;margin-bottom:10px}
+.itm{display:flex;align-items:center;padding:10px;border:1px solid #f0ede6;border-radius:4px;margin-bottom:8px;background:#fdfdfd;cursor:pointer}
+.itm input{accent-color:var(--g);margin-right:8px}
+.pbr{height:8px;background:#eaddca;border-radius:4px;overflow:hidden;margin-top:8px}
+.pfi{width:0;height:100%;background:var(--g);transition:width .3s}
+.txa{width:100%;height:80px;padding:10px;border:1px solid var(--b);border-radius:4px;resize:none;margin:8px 0;outline:0}
+.btn{background:var(--g);color:#fff;border:none;padding:6px 12px;border-radius:4px;cursor:pointer}
+.btn:hover{background:#153d22}
+.fed{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.fit{background:#fff;border:1px solid var(--b);border-left:4px solid var(--g);padding:10px;border-radius:0 4px 4px 0}
+.trm{background:#0b0f19;color:#4af626;padding:12px;border-radius:4px;font-family:monospace;min-height:120px;margin-top:10px}
+.bgd{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.bgi{padding:8px 4px;background:var(--bg);border-radius:4px;font-size:11px;text-align:center;opacity:.3}
+.bgi.at{opacity:1;border:1px solid var(--a);background:#fff}
+.stb{background:var(--bg);padding:10px;border-radius:4px;margin-top:8px;border-left:3px solid var(--a)}
+</style></head><body>
+<div id="gt"><h3>🌿 Growth Gateway</h3><input type="password" id="pw" placeholder="Password..." onkeydown="if(event.key==='Enter')ak()"><button class="btn" style="width:100%" onclick="ak()">Unlock</button><p id="er" style="color:red;font-size:11px;display:none;margin-top:5px">Denied.</p></div>
+<div id="ap"><div class="lay"><nav><h3>🌿 Growth</h3><a class="lk at" onclick="v('ds',this)">📊 Dashboard</a><a class="lk" onclick="v('cr',this)">📚 Courses</a><a class="lk" onclick="v('jn',this)">🙏 Journal</a><a class="lk" onclick="v('sy',this)">⚙️ System</a><a class="lk" onclick="v('if',this)">ℹ️ Info</a></nav><main>
+<div id="v-ds" class="pnl at"><h1 class="hdr">Progress Tracker</h1><div class="grd"><div class="crd"><h4>📋 Daily Milestones</h4><br><label class="itm"><input type="checkbox" id="task0" onchange="cl()"><span>Daily Devotional</span></label><label class="itm"><input type="checkbox" id="task1" onchange="cl()"><span>Science Module</span></label><label class="itm"><input type="checkbox" id="task2" onchange="cl()"><span>Math Assessment</span></label><label class="itm"><input type="checkbox" id="task3" onchange="cl()"><span>Prayer Reflection</span></label><div style="display:flex;justify-content:space-between;margin-top:12px;font-weight:bold"><span>Total Yield</span><span id="pt">0%</span></div><div class="pbr"><div id="fl" class="pfi"></div></div></div><div><div class="crd"><h5>🔥 Streak Tracker</h5><h3 style="margin-top:5px">5 Days Active</h3></div><div class="crd"><h5>🏅 Unlocked Badges</h5><br><div class="bgd"><div class="bgi" id="b0">🚀<br>Start</div><div class="bgi" id="b1">🎯<br>Half</div><div class="bgi" id="b2">👑<br>Full</div></div></div></div></div></div>
+<div id="v-cr" class="pnl"><h1 class="hdr">Subjects Curriculum</h1><div id="sb-mn" class="sb-grid"><div class="row" onclick="sL('l-bb')">📖 Bible Devotions</div><div class="row" onclick="sL('l-ch')">🤝 Character Goals</div><div class="row" onclick="sL('l-sc')">🔬 Science Modules</div><div class="row" onclick="sL('l-mt')">📐 Math Logic</div><div class="row" onclick="sL('l-en')">📝 English Literacy</div><div class="row" onclick="sL('l-ss')">🌍 Social Studies</div><div class="row" onclick="sL('l-td')">💻 Tech Literacy</div><div class="row" onclick="sL('l-cv')">❤️ Values Education</div></div>
+<div id="l-bb" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>📖 Bible Devotions</h3><p>"Trust in the Lord with all your heart..." — Proverbs 3:5</p><div class="stb">Focus tracking direction on divine parameters rather than logical constraints.</div></div>
+<div id="l-ch" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>🤝 Character Goals</h3><p>True leadership starts with strict self-discipline and finishing targets on schedule.</p><div class="stb">Integrity verification requires zero external observation loops.</div></div>
+<div id="l-sc" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>🔬 Science Modules</h3><p>Plant cells feature specialized chloroplasts and rigid cellulose cell walls.</p><div class="stb">Key Concepts: Cell Wall, Central Vacuole, Chloroplasts, Photosynthesis matrix.</div></div>
+<div id="l-mt" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>📐 Math Logic</h3><p>Follow PEMDAS laws: Parentheses, Exponents, Multiply/Divide, Add/Subtract.</p><div class="stb">Example calculation: 4 + 3 * (5 - 2) = 13.</div></div>
+<div id="l-en" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>📝 English Literacy</h3><p>Mastering grammar frameworks, vocabulary processing, and comprehension layouts.</p><div class="stb">Focus Track: Identifying active vs passive voice structures inside compositions.</div></div>
+<div id="l-ss" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>🌍 Social Studies</h3><p>Exploring ancient civilizations, geographic dependencies, and cultural timelines.</p><div class="stb">Focus Track: Analyzing community building maps and system loops.</div></div>
+<div id="l-td" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>💻 Tech Literacy</h3><p>Navigating computational paths, programming layouts, and securing online identities.</p><div class="stb">Security: Never parse sensitive parameters over unsecured nodes.</div></div>
+<div id="l-cv" class="crd ls-bx"><button class="bk-bt" onclick="bM()">⬅ Back</button><h3>❤️ Values Education</h3><p>Cultivating personal honesty loops, peer respect, and explicit empathy execution.</p><div class="stb">Core Value Loop: Treat human entities with identical value metrics parameters.</div></div></div>
+<div id="v-jn" class="pnl"><h1 class="hdr">Live Prayer Journal</h1><div style="display:grid;grid-template-columns:1.2fr 1fr;gap:15px;max-width:850px"><div class="crd"><small style="font-weight:bold;color:var(--g)">Log Reflections...</small><textarea id="ji" class="txa" placeholder="Type here..."></textarea><div style="display:flex;justify-content:space-between"><button class="btn" onclick="aj()">Save Entry</button><button class="btn" style="background:#b33939" onclick="cj()">Clear All</button></div></div><div class="crd"><h5>History Log</h5><div id="fd" class="fed"></div></div></div></div>
+<div id="v-sy" class="pnl"><h1 class="hdr">Core Diagnostics</h1><div class="crd" style="max-width:550px"><button class="btn" style="background:#06c" onclick="dg()">🔄 Execute Sync Test</button><div id="tm" class="trm">&gt; Diagnostic Module Ready...</div></div></div>
+<div id="v-if" class="pnl"><h1 class="hdr">App Information Manifest</h1><div style="display:grid;grid-template-columns:1.2fr 1fr;gap:15px;max-width:850px"><div class="crd"><h4>What is Growth?</h4><p style="color:#444;font-size:13px;margin:8px 0 15px 0;line-height:1.5">Academic milestones tracking with values and faith loops.</p><h4>🎯 Target Level Presets</h4><select class="txa" style="height:35px;margin:5px 0 15px 0;padding:5px" onchange="alert(this.value)"><option value="Elementary Level">Elementary Level (Grades 1-6)</option><option value="Junior High Level" selected>Junior High School Matrix (Grades 7-10)</option><option value="Senior High Level">Senior High Level (Grades 11-12)</option></select><h4>⚓ Religious Focus Matrix</h4><ul style="margin:5px 0 0 18px;font-size:13px;color:#555;line-height:1.6"><li>Faith in God development tracks</li><li>Prayer and Devotionals interaction</li><li>Biblical Values framework mapping</li><li>Respect, Love, and Service loops</li></ul></div><div class="crd" style="background:#e8f5e9"><h4>Group Metadata</h4><p style="font-size:13px;line-height:1.7;margin-top:8px"><b>Group:</b> Group 1<br><b>Grade:</b> Grade 7<br><b>Section:</b> Mangga<br><b>Showcase:</b> 2026 Presentation</p></div></div></div>
+</main></div></div>
+<script>
+function ak(){if(document.getElementById('pw').value==="mangga_growth_2026"){document.getElementById('gt').style.display='none';document.getElementById('ap').style.display='block';try{rl()}catch(e){cl()}}else{document.getElementById('er').style.display='block'}}
+function v(t,e){document.querySelectorAll('.lk').forEach(i=>i.classList.remove('at'));document.querySelectorAll('.pnl').forEach(p=>p.className='pnl');e.classList.add('at');document.getElementById('v-'+t).className='pnl at'}
+function sL(id){document.getElementById('sb-mn').style.display='none';document.querySelectorAll('.ls-bx').forEach(b=>b.style.display='none');document.getElementById(id).style.display='block'}
+function bM(){document.getElementById('sb-mn').style.display='grid';document.querySelectorAll('.ls-bx').forEach(b=>b.style.display='none')}
+function cl(){let cb=document.getElementById('v-ds').querySelectorAll('input'),c=0;cb.forEach((x,i)=>{if(x.checked){c++;try{localStorage.setItem('g_t_'+i,'1')}catch(e){}}else{try{localStorage.removeItem('g_t_'+i)}catch(e){}}});let p=cb.length?Math.round((c/cb.length)*100):0;document.getElementById('pt').innerText=p+'%';document.getElementById('fl').style.width=p+'%';document.getElementById('b0').classList.toggle('at',p>=25);document.getElementById('b1').classList.toggle('at',p>=50);document.getElementById('b2').classList.toggle('at',p===100)}
+function rl(){let cb=document.getElementById('v-ds').querySelectorAll('input');cb.forEach((x,i)=>{try{if(localStorage.getItem('g_t_'+i)==='1')x.checked=!0}catch(e){}});cl();let j=[];try{j=JSON.parse(localStorage.getItem('g_j'))||[]}catch(e){}let f=document.getElementById('fd');f.innerHTML=j.length===0?`<div class="fit"><b style="color:var(--g)">[08:48 PM]:</b> heavenly father, thank you... amen</div>`:'';j.forEach(e=>{let div=document.createElement('div');div.className='fit';div.innerHTML=e;f.appendChild(div)})}
+function aj(){let txt=document.getElementById('ji').value.trim();if(!txt)return;let d=new Date(),h=d.getHours(),m=String(d.getMinutes()).padStart(2,'0'),a=h>=12?'PM':'AM';h=h%12||12;let ts=`<b style="color:var(--g)">[${String(h).padStart(2,'0')}:${m} ${a}]:</b> ${txt.replace(/</g,"&lt;").replace(/>/g,"&gt;")}`;let j=[];try{j=JSON.parse(localStorage.getItem('g_j'))||[]}catch(e){}j.unshift(ts);try{localStorage.setItem('g_j',JSON.stringify(j))}catch(e){}document.getElementById('ji').value='';rl()}
+function cj(){if(confirm("Clear logs?")){try{localStorage.removeItem('g_j')}catch(e){}rl()}}
+function dg(){let t=document.getElementById('tm'),l=["Connecting to Grade 7 Local Database...","➔ Identity Checks... OK","➔ Synchronizing Streams... OK","SUCCESS: Client synced."],i=0;t.innerHTML="";let iv=setInterval(()=>{if(i<l.length){t.innerHTML+=`<div>&gt; ${l[i++]}</div>`}else{clearInterval(iv)}},300)}
+</script></body></html>
